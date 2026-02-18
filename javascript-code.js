@@ -252,19 +252,16 @@ function flatten(arr){
 }
 
 
+const countOccurrencesArr = [0,0,3,6,6,7,9,3,7,0];
 
-const flattenArr = [1, [2, 3], [4, [5, 6]]];
-function flattenArray(arr) {
-  let result = [];
+function countOccurrences(arr) {
+  const freq = {};
 
-  for (let item of arr) {
-    if (Array.isArray(item)) {
-      result = result.concat(flattenArray(item)); // recursive call
-    } else {
-      result.push(item);
-    }
+  for (let num of arr) {
+    freq[num] = (freq[num] || 0) + 1;
   }
 
-  return result;
+  return freq;
 }
 
+// countOccurrences(countOccurrencesArr);
